@@ -9,6 +9,7 @@ namespace SEDC.Library
 {
     public static class StaticDb
     {
+        public static int BookID = 2;
         public static List<Book> Books = new List<Book>
         {
             new Book

@@ -1,0 +1,17 @@
+﻿@model PizzaViewModel
+
+<h2>@ViewData["Title"]</h2>
+<p>Pizza: </p>
+@*<p>
+        @Model.Pizza
+        @Model.Price
+    </p>*@
+
+@if (Model.IsOnPromotion)
+{
+    <h4>@Model.Pizza is on promotion!!!!!!!!!!</h4>
+}
+else
+{
+    <h4>@Model.Pizza is not on promotion!!!!!!!!!!</h4>
+}

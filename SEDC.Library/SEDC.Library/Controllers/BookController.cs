@@ -11,16 +11,17 @@ using SEDC.Library.Models;
 namespace SEDC.Library.Controllers
 {
     //[Route(template:"Kniga/[Action]")]
-    [Route(template: "Kniga")]
+    //[Route(template: "Kniga")]
     public class BookController : Controller
     {
         //[Route(template: "Books")]
         public IActionResult Index()
         {
-            return View();
+            List<Book> books = StaticDb.Books;
+            return View(books);
         }
 
-        [Route(template: "Json")]
+        //[Route(template: "Json")]
         public IActionResult JsonData()
         {
             Book book = new Book
@@ -54,6 +55,21 @@ namespace SEDC.Library.Controllers
                 return View(book);
             }
             return new EmptyResult();
+        }
+
+        [HttpGet]
+        public IActionResult CreateBook()
+        {
+            Book book = new Book();
+            return View(book);
+        }
+        [HttpPost]
+        public IActionResult CreateBookPost(Book book)
+        {
+            StaticDb.BookID++;
+            book.Id = StaticDb.BookID;
+            StaticDb.Books.Add(book);
+            return RedirectToAction("Index");
         }
     }
 }

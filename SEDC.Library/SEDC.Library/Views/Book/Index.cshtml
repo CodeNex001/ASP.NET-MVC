@@ -1,7 +1,12 @@
-﻿@*
-    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
-*@
-@{
-}
+﻿@model List<Book>
+
 <h2>Index</h2>
 <p>It's our Book Index View!!!!!!!</p> 
+
+
+@for(int i = 0; i < Model.Count; i++)
+{
+    <p>Title: @Model[i].Title</p>
+}
+<a asp-controller="Book" asp-action="CreateBook">Create Book</a>
+ 

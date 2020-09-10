@@ -1,0 +1,11 @@
+﻿@model List<SEDC.PizzaApp.Models.ViewModels.PizzaViewModel> 
+
+<h2>@ViewData["Title"]</h2>
+<p>Pizzas: </p>
+
+<ul>
+    @for (int i = 0; i < Model.Count; i++)
+    {
+        <li>@Model[i].id - Pizza @Model[i].Pizza - @Model[i].Price - @Model[i].PizzaSize</li>
+    }
+</ul>

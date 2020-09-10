@@ -1,0 +1,11 @@
+﻿@model List<SEDC.PizzaApp.Models.ViewModels.PizzaViewModel> 
+
+<h2>Index</h2>
+<p>Pizzas</p>
+
+<ul>
+    @for (int i = 0; i < Model.Count; i++)
+    {
+        <li>id: @Model[i].id -Pizz @Model[i].Pizza - @Model[i].Price -@Model[i].PizzaSize </li>
+    }
+</ul>
